@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DAL.Entities.Subject>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/ajax.js"></script>
+
+<script src="~/js/signalr.js"></script>
+<script src="~/js/SignalRAdd.js"></script>
+
+<h2>Subject</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id=@item.Id.ToString()>
+                <td id=@item.Id.ToString() ;Name>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, collection = item }) |
+                    @Html.ActionLink("Set link SchoolStaf-Subject", "LinkSchoolStaffSubject", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

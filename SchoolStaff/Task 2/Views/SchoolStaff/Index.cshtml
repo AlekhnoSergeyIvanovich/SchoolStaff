@@ -1,0 +1,88 @@
+﻿@using DAL.Entities
+@using Presentation.Controllers
+@model IEnumerable<DAL.Entities.SchoolStaff>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/ajaxSchoolStaff.js"></script>
+
+<h2>SchoolStaff</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form method="post" onsubmit="return false;">
+    Filter: <input type="text" id="edit" onkeyup="search_func(this.value, '@Url.Action("SelectSchoolStaff")');" onchange="search_func(this.value, '@Url.Action("SelectSchoolStaff")');" onpaste="search_func(this.value, '@Url.Action("SelectSchoolStaff")');" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Full Name
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th width = "12%">Phone</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="messagesList">
+        @foreach (var item in Model)
+        {
+            <tr name=@item.Id.ToString() id=@item.Id.ToString()>
+                <td id=@item.Id.ToString() ;Name>
+                    @Html.DisplayFor(modelItem => item.Name) @Html.DisplayFor(modelItem => item.Patronymic) @Html.DisplayFor(modelItem => item.Surname)
+                </td>
+                <td id=@item.Id.ToString() ;DateOfBirth>
+                    @{
+                        var active = item.DateOfBirth.ToString("dd/MM/yyyy");
+                        @Html.DisplayFor(model => active);
+                    }
+                </td>
+                <td id=@item.Id.ToString() ;Email>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @foreach (SchoolStaffPhone c in ((IQueryable<SchoolStaffPhone>)ViewBag.SchoolStaffPhones).Where(x => x.SchoolStaffId == item.Id))
+                    {
+                        if ((((IQueryable<SchoolStaffPhone>)ViewBag.SchoolStaffPhones).Where(x => x.SchoolStaffId == item.Id).First().Id) != c.Id)
+                        {
+                            <br>
+                        }
+                        @Html.DisplayFor(modelItem => c.Phone)
+                    }
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id, collection = item }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, collection = item }) |
+                    @Html.ActionLink("SchoolStaff-Subject", "LinkSchoolStaffSubject", new { id = item.Id }) |
+                    @Html.ActionLink("SchoolStaff-Profession", "LinkSchoolStaffAdministration", new { id = item.Id }) |
+                    @Html.ActionLink("SchoolStaff-Phone", "LinkSchoolStaffPhone", new { id = item.Id }) |
+                    @Html.ActionLink("Sent Message", "Create", "SentMessage", new { idSchoolStaff = item.Id }, null)
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+<div id="dvItems" style="font-size:24px;">
+</div>
+
+<script src="~/js/signalr.js"></script>
+<script src="~/js/SignalRAdd.js"></script>

@@ -1,0 +1,50 @@
+﻿@model DAL.Entities.SentMessage
+
+<h4>SentMessage</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" type="hidden">
+                <!--<label type="hidden" asp-for="Id" class="control-label"></label>-->
+                <input type="hidden" asp-for="Id" class="form-control" />
+                <span type="hidden" asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group" type="hidden">
+                <!--<label type="hidden" asp-for="IdSchoolStaff" class="control-label"></label>-->
+                <input type="hidden" asp-for="IdSchoolStaff" class="form-control" />
+                <span type="hidden" asp-validation-for="IdSchoolStaff" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MessageText" class="control-label"></label><br>
+                <textarea asp-for="MessageText" rows="5" cols="40"></textarea>
+                <!--<input asp-for="MessageText" class="form-control" />-->
+                <span asp-validation-for="MessageText" class="text-danger"></span>
+            </div>
+            <div class="form-group" type="hidden">
+                <!--<label type="hidden" asp-for="TypeMessage" class="control-label"></label>-->
+                <input type="hidden" asp-for="TypeMessage" class="form-control" />
+                <span type="hidden" asp-validation-for="TypeMessage" class="text-danger"></span>
+            </div>
+            <div class="form-group" type="hidden">
+                <div class="checkbox" type="hidden">
+                    <label type="hidden">
+                        <input type="hidden" asp-for="Status" /> <!--Html.DisplayNameFor(model => model.Status)-->
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sent" class="btn btn-default" asp-route-idSchoolStaff=@ViewBag.idSchoolStaff />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="SchoolStaff">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

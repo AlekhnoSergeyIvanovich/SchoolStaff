@@ -1,0 +1,35 @@
+﻿@using DAL.Entities
+@model DAL.Entities.Subject
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <fieldset>
+        <legend>SchoolStaffs</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label"><b>Имя</b></div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="editor-label"><b>SchoolStaffs</b></div>
+        @foreach (SchoolStaff c in ViewBag.SchoolStaffs)
+        {
+            <input type="checkbox" name="selectedSchoolStaffs" value="@c.Id" @(((IQueryable<SchoolStaffSubject>)ViewBag.SchoolStaffSubjects).Any(x => x.SchoolStaffId == c.Id) ? "checked=\"checked\"" : "") />@c.Name <br />
+        }
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,53 @@
+﻿@using System.Drawing
+@using DAL.Entities
+@model IEnumerable<DAL.Entities.Messages>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/ajaxSentMessage.js"></script>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MessageText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TypeMessage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WriteTime)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr style="@(item.Status ? "background-color: #ffffff" : "background-color: #dc143c")">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MessageText)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TypeMessage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WriteTime)
+                </td>
+                <td>
+                    <form method="post" onsubmit="return false;">
+                        <input id="@item.IdSentMessage.ToString() ;Button" type="button" value="Sent message" onclick="Enter_func(@(item.IdSentMessage), @(item.IdSchoolStaff), '@Url.Action("WriteMessage", "SentMessage")')" />
+                    </form>
+                </td>
+                <td id="@item.IdSentMessage.ToString() ;Res">
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

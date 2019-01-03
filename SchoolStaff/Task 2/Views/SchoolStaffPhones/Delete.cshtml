@@ -1,0 +1,31 @@
+﻿@model DAL.Entities.SchoolStaffPhone
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>SchoolStaffPhone</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    <!--
+    <td style="visibility: hidden">
+        @Html.DisplayFor(model => model.SchoolStaffId)
+    </td>
+    -->
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="submit" value="Delete" class="btn btn-default" asp-route-idSchoolStaff=@ViewBag.idSchoolStaff/> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

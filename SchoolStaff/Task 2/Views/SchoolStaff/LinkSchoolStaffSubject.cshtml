@@ -1,0 +1,37 @@
+﻿<!--using TeamMvc4.Models-->
+@using DAL.Entities
+@model DAL.Entities.SchoolStaff
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <fieldset>
+        <legend>Subjects</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label"><b>SchoolStaff</b></div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.Name)
+        </div>
+
+        <div class="editor-label"><b>Subject</b></div>
+        @foreach (Subject c in ViewBag.Subject)
+        {
+            <input type="checkbox" name="selectedSubject" value="@c.Id"
+                   @(((IQueryable<SchoolStaffSubject>)ViewBag.SchoolStaffSubjects).Any(x => x.SubjectId == c.Id) ? "checked=\"checked\"" : "") />@c.Name <br />
+            }
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>

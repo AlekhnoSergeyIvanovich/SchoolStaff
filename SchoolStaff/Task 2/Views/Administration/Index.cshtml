@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DAL.Entities.Profession>
+
+<h2>Profession</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/ajaxProfession.js"></script>
+<script src="~/js/signalr.js"></script>
+<script src="~/js/SignalRAdd.js"></script>
+
+<form method="post" onsubmit="return false;">
+    Filter: <input type="text" id="edit" onkeyup="searchProfession_func(this.value, '@Url.Action("SelectProfession")');" onchange="searchProfession_func(this.value, '@Url.Action("SelectProfession")');" onpaste="searchProfession_func(this.value, '@Url.Action("SelectProfession")');" />
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameProfession)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountPeopleProfession)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="messagesList">
+        @foreach (var item in Model)
+        {
+            <tr id=@item.Id.ToString()>
+                <td id="@item.Id.ToString() ;Name">
+                    @Html.DisplayFor(modelItem => item.NameProfession)
+                </td>
+                <td id="@item.Id.ToString() ;CountPeopleProfession">
+                    @Html.DisplayFor(modelItem => item.CountPeopleProfession)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id, collection = item }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id, collection = item }) |
+                    @Html.ActionLink("Set link SchoolStaff-Profession", "LinkSchoolStaffAdministration", new { id = item.Id })
+                </td>
+            </tr>
+        }
+</table>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

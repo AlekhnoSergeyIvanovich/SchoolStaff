@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DAL.Entities.SchoolStaffPhone>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/Checked/alaxCheckedPhone.js"></script>
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create" asp-route-idSchoolStaff=@ViewBag.idSchoolStaff>Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td style="visibility: hidden">
+                    @Html.DisplayFor(modelItem => item.SchoolStaffId)
+                </td>
+                <td>
+                    @{
+                        var isChecked = false;
+                        if ((item.Id == ViewBag.idPhone) || (Model.Count() == 1))
+                        {
+                            isChecked = true;
+                        }
+                        <!--Html.RadioButtonFor(model => model.First().Phone, item.Id, false)-->
+                        @Html.RadioButton("radiobuttonname", 1, isChecked, new {onchange = "checkedPhone_func(" + @ViewBag.idSchoolStaff + ", " + item.Id + ", '" + @Url.Action("CheckedPhone", "SchoolStaffPhones") + "');"});
+                    }
+                    <!--checkedPhone_func(idSchoolStaff, idPhone, paramUrl)-->
+                </td>
+                <td>
+                    <form asp-action="Details">
+                        <input type="hidden" asp-for=@item.Id />
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id, idSchoolStaff = (@ViewBag.idSchoolStaff) }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id, idSchoolStaff = (@ViewBag.idSchoolStaff) }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id, collection = item, idSchoolStaff = (@ViewBag.idSchoolStaff) })
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Index" asp-controller="SchoolStaff">Back to List</a>
+</div>
