@@ -28,9 +28,9 @@ namespace Business
             return await _dbSet.FindAsync(id);
         }
 
-        public async Task Create(TEntity order)
+        public void Create(TEntity order)
         {
-            await _dbSet.AddAsync(order);
+            _dbSet.AddAsync(order);
             //await _db.SaveChangesAsync();
         }
 

@@ -75,14 +75,14 @@ namespace Presentation.Controllers
         // POST: Administration/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Profession prof)
+        public ActionResult Create(Profession prof)
         {
             try
             {
                 // TODO: Add insert logic here
                 if (ModelState.IsValid)
                 {
-                    await _repositoryProfession.Create(prof);
+                    _repositoryProfession.Create(prof);
                     return RedirectToAction(nameof(Index));
                 }
                 else

@@ -1,0 +1,5 @@
+Index;ThreadID;Time;Severity;Location;Detail;Exception
+1;1;2018-12-23 22:20:45.1797;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-23 22:32:16.4207;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-23 22:33:42.8594;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-23 23:05:50.0112;DEBUG;(Program.cs:22);init main;

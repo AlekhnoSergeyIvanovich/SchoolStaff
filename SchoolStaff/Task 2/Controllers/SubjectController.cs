@@ -77,14 +77,14 @@ namespace Presentation.Controllers
         // POST: Subject/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(Subject subject)
+        public ActionResult Create(Subject subject)
         {
             try
             {
                 // TODO: Add insert logic here
                 if (ModelState.IsValid)
                 {
-                    await _repSubject.Create(subject);
+                    _repSubject.Create(subject);
                     return RedirectToAction(nameof(Index));
                 }
                 else

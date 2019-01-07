@@ -34,7 +34,7 @@ namespace Business.MessagesRep
                 //----------------------------------------------
                 SchoolStaff schoolStaff = _context.SchoolStaffs.Find(new object[] { idSchoolStaff });
                 //SentMessage sentMessage = _context.SentMessages.Find(new object[] { idSentMessage });
-                var ssp = _context.SchoolStaffPhones.First(c => c.SchoolStaffId == idSchoolStaff).Phone;
+                var ssp = _context.SchoolStaffPhones.First(c => c.Id == schoolStaff.PrimaryPhoneId).Phone;
 
                 try
                 {

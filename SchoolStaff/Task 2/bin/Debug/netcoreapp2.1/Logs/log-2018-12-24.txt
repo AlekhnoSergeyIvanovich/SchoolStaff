@@ -1,0 +1,167 @@
+Index;ThreadID;Time;Severity;Location;Detail;Exception
+1;1;2018-12-24 05:07:11.5398;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 05:17:34.2263;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 05:25:08.5813;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 05:25:14.6704;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 05:25:22.2618;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-24 05:26:01.4333;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-24 05:26:01.7106;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-24 05:26:01.7203;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-24 05:26:01.7203;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-24 05:26:01.7341;INFO;;Applying migration '20181224022522_Identity'.;
+6;1;2018-12-24 05:26:01.8176;INFO;;"Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);";
+7;1;2018-12-24 05:26:01.8176;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] nvarchar(450) NOT NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);";
+8;1;2018-12-24 05:26:01.8176;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetRoleClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [RoleId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoleClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetRoleClaims_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE
+);";
+9;1;2018-12-24 05:26:01.8307;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserClaims] (
+    [Id] int NOT NULL IDENTITY,
+    [UserId] nvarchar(450) NOT NULL,
+    [ClaimType] nvarchar(max) NULL,
+    [ClaimValue] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserClaims] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_AspNetUserClaims_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);";
+10;1;2018-12-24 05:26:01.8307;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserLogins] (
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [ProviderKey] nvarchar(128) NOT NULL,
+    [ProviderDisplayName] nvarchar(max) NULL,
+    [UserId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserLogins] PRIMARY KEY ([LoginProvider], [ProviderKey]),
+    CONSTRAINT [FK_AspNetUserLogins_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);";
+11;1;2018-12-24 05:26:01.8307;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserRoles] (
+    [UserId] nvarchar(450) NOT NULL,
+    [RoleId] nvarchar(450) NOT NULL,
+    CONSTRAINT [PK_AspNetUserRoles] PRIMARY KEY ([UserId], [RoleId]),
+    CONSTRAINT [FK_AspNetUserRoles_AspNetRoles_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [AspNetRoles] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_AspNetUserRoles_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);";
+12;1;2018-12-24 05:26:01.8458;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [AspNetUserTokens] (
+    [UserId] nvarchar(450) NOT NULL,
+    [LoginProvider] nvarchar(128) NOT NULL,
+    [Name] nvarchar(128) NOT NULL,
+    [Value] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetUserTokens] PRIMARY KEY ([UserId], [LoginProvider], [Name]),
+    CONSTRAINT [FK_AspNetUserTokens_AspNetUsers_UserId] FOREIGN KEY ([UserId]) REFERENCES [AspNetUsers] ([Id]) ON DELETE CASCADE
+);";
+13;1;2018-12-24 05:26:01.8458;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);";
+14;1;2018-12-24 05:26:01.8458;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL;";
+15;1;2018-12-24 05:26:01.8458;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);";
+16;1;2018-12-24 05:26:01.8608;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);";
+17;1;2018-12-24 05:26:01.8608;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);";
+18;1;2018-12-24 05:26:01.8608;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);";
+19;1;2018-12-24 05:26:01.8608;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL;";
+20;1;2018-12-24 05:26:01.8608;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20181224022522_Identity', N'2.1.4-rtm-31024');";
+1;1;2018-12-24 05:27:40.9839;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 05:51:21.1021;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 06:31:56.2160;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 06:40:58.8607;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 06:44:24.2129;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 08:27:39.6508;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 08:37:38.4965;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 09:11:57.2955;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 09:13:29.9178;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 09:14:15.8723;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 09:59:37.2027;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:00:11.2000;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:00:50.0838;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:01:30.1969;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:01:47.8684;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:02:35.3005;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:04:12.1063;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:04:41.3003;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:05:19.3334;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:16:24.9690;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:18:15.8193;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:19:47.8365;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:20:36.9250;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:33:54.5560;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:34:15.7393;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:35:36.3669;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:46:05.2600;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:46:51.9313;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:47:30.6214;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:48:48.6138;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:50:51.8106;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:51:24.2485;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:52:09.2927;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 10:54:06.0426;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:28:08.7495;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:31:17.4956;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:32:13.4708;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:33:44.2157;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:37:35.6817;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:38:12.8360;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:42:56.3418;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:43:51.7625;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:58:24.4306;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 11:59:43.5149;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 12:00:10.4410;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 12:01:57.6156;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 12:12:40.9177;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 12:14:32.1618;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 12:20:43.2397;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 13:28:35.3957;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 13:59:39.1476;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 14:05:09.6896;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 14:09:49.7366;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 14:21:50.6227;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 14:23:13.9868;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 14:51:35.2319;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 14:56:45.0193;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 15:00:27.4588;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 15:02:11.9655;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 15:03:47.7830;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 15:06:36.7404;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 21:42:00.4543;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-24 21:43:03.5244;DEBUG;(Program.cs:22);init main;

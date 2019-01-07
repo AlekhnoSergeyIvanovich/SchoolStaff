@@ -10,7 +10,7 @@ namespace Business.Repositories
     {
         IQueryable<T> GetAll();
         Task<T> Get(int id);
-        Task Create(T item);
+        void Create(T item);
         Task Update(T item);
         void Delete(T item);
     }

@@ -1,0 +1,668 @@
+Index;ThreadID;Time;Severity;Location;Detail;Exception
+1;1;2018-12-19 11:18:24.5346;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 11:18:32.8021;DEBUG;(Program.cs:22);init main;
+2;1;2018-12-19 11:18:34.8282;ERROR;(Program.cs:31);Stopped program because of exception;"System.InvalidOperationException: Cannot create a relationship between 'SchoolStaff.SchoolStaffPhones' and 'SchoolStaffPhone.SchoolStaff', because there already is a relationship between 'SchoolStaff.SsPhone' and 'SchoolStaffPhone.SchoolStaff'. Navigation properties can only participate in a single relationship.
+   at Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceNavigationBuilder.ThrowForConflictingNavigation(ForeignKey foreignKey, String newInverseName, Boolean newToPrincipal)
+   at Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceNavigationBuilder.WithManyBuilder(PropertyIdentity collection)
+   at Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceNavigationBuilder.WithManyBuilder(PropertyInfo navigationProperty)
+   at Microsoft.EntityFrameworkCore.Metadata.Builders.ReferenceNavigationBuilder`2.WithMany(Expression`1 navigationExpression)
+   at DAL.Configurations.SchoolStaffPhoneConfiguration.Configure(EntityTypeBuilder`1 entity) in c:\Курс ПВТ практика\Задания\Задание 11\Task 11\Business\Configurations\SchoolStaffPhoneConfiguration.cs:line 23
+   at Microsoft.EntityFrameworkCore.ModelBuilder.ApplyConfiguration[TEntity](IEntityTypeConfiguration`1 configuration)
+   at DAL.ApplicationDbContext.OnModelCreating(ModelBuilder builder) in c:\Курс ПВТ практика\Задания\Задание 11\Task 11\Business\ApplicationDbContext.cs:line 45
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelCustomizer.Customize(ModelBuilder modelBuilder, DbContext context)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.CreateModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.<>c__DisplayClass5_0.<GetModel>b__1()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, IConventionSetBuilder conventionSetBuilder, IModelValidator validator)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel()
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__7_1(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitFactory(FactoryCallSite factoryCallSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScoped(ScopedCallSite scopedCallSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(IServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass1_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngine.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.GetRelationalService[TService](IInfrastructure`1 databaseFacade)
+   at Microsoft.EntityFrameworkCore.RelationalDatabaseFacadeExtensions.Migrate(DatabaseFacade databaseFacade)
+   at Task_2.Program.Main(String[] args) in c:\Курс ПВТ практика\Задания\Задание 11\Task 11\Task 2\Program.cs:line 31"
+1;1;2018-12-19 11:35:20.4186;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 11:35:38.1246;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 11:38:56.3948;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 11:38:56.5710;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 11:38:56.5788;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 11:38:56.5788;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 11:38:56.5928;INFO;;Applying migration '20181219083538_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 11:38:56.6286;INFO;;"Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [IdPhone] int NULL;";
+7;1;2018-12-19 11:38:56.6555;INFO;;"Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_IdPhone] ON [SchoolStaffs] ([IdPhone]) WHERE [IdPhone] IS NOT NULL;";
+8;1;2018-12-19 11:38:56.6555;ERROR;;"Failed executing DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_IdPhone] FOREIGN KEY ([IdPhone]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE SET NULL;";"System.Data.SqlClient.SqlException (0x80131904): Введение ограничения внешнего ключа (FOREIGN KEY) ""FK_SchoolStaffs_SchoolStaffPhones_IdPhone"" для таблицы ""SchoolStaffs"" может привести к появлению циклов или множественных каскадных путей. Укажите ON DELETE NO ACTION или ON UPDATE NO ACTION либо измените другие ограничения внешнего ключа (FOREIGN KEY).
+Не удалось создать ограничение или индекс. См. описание предыдущих ошибок.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:1be5a3ff-dd21-47e2-9346-1841f444326f
+Error Number:1785,State:0,Class:16"
+1;1;2018-12-19 11:59:28.1969;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 11:59:28.4961;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 11:59:28.5044;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 11:59:43.8490;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 12:00:18.5207;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:00:18.7164;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:00:18.7230;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:00:18.7230;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:00:18.7361;INFO;;Applying migration '20181219085944_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 12:00:18.7682;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [IdPhone] int NULL;";
+7;1;2018-12-19 12:00:18.7682;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_IdPhone] ON [SchoolStaffs] ([IdPhone]) WHERE [IdPhone] IS NOT NULL;";
+8;1;2018-12-19 12:00:18.7831;INFO;;"Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_IdPhone] FOREIGN KEY ([IdPhone]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE NO ACTION;";
+9;1;2018-12-19 12:00:18.7831;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20181219085944_LinkOneToOneSchoolStaff-Phone', N'2.1.4-rtm-31024');";
+1;1;2018-12-19 12:07:37.4022;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:07:37.6083;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:07:37.6083;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:07:37.6083;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:07:37.6516;INFO;;Reverting migration '20181219085944_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 12:07:37.6620;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_IdPhone];";
+7;1;2018-12-19 12:07:37.6620;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP INDEX [IX_SchoolStaffs_IdPhone] ON [SchoolStaffs];";
+8;1;2018-12-19 12:07:37.6926;INFO;;"Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[SchoolStaffs]') AND [c].[name] = N'IdPhone');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [SchoolStaffs] DROP COLUMN [IdPhone];";
+9;1;2018-12-19 12:07:37.6926;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM [__EFMigrationsHistory]
+WHERE [MigrationId] = N'20181219085944_LinkOneToOneSchoolStaff-Phone';";
+1;1;2018-12-19 12:07:46.6854;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:07:46.9557;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:07:46.9557;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 12:09:58.4612;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 12:10:11.2724;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:10:11.4719;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:10:11.4719;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:10:11.4838;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:10:11.4838;INFO;;Applying migration '20181219090958_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 12:10:11.5221;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 12:10:11.5221;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 12:10:11.5396;ERROR;;"Failed executing DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE SET NULL;";"System.Data.SqlClient.SqlException (0x80131904): Введение ограничения внешнего ключа (FOREIGN KEY) ""FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId"" для таблицы ""SchoolStaffs"" может привести к появлению циклов или множественных каскадных путей. Укажите ON DELETE NO ACTION или ON UPDATE NO ACTION либо измените другие ограничения внешнего ключа (FOREIGN KEY).
+Не удалось создать ограничение или индекс. См. описание предыдущих ошибок.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:f49f6ff4-d0ee-4a16-908e-ccaa4dd7435b
+Error Number:1785,State:0,Class:16"
+1;1;2018-12-19 12:10:56.4336;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:10:56.6651;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:10:56.6733;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 12:11:29.3318;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 12:11:38.7877;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:11:38.9977;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:11:39.0053;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:11:39.0053;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:11:39.0197;INFO;;Applying migration '20181219091129_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 12:11:39.0621;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 12:11:39.0621;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 12:11:39.0621;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE NO ACTION;";
+9;1;2018-12-19 12:11:39.0621;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20181219091129_LinkOneToOneSchoolStaff-Phone', N'2.1.4-rtm-31024');";
+1;1;2018-12-19 12:14:46.4310;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:14:46.6211;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:14:46.6285;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:14:46.6285;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:14:46.6614;INFO;;Reverting migration '20181219091129_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 12:14:46.6699;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId];";
+7;1;2018-12-19 12:14:46.6699;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs];";
+8;1;2018-12-19 12:14:46.6973;INFO;;"Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[SchoolStaffs]') AND [c].[name] = N'PrimaryPhoneId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [SchoolStaffs] DROP COLUMN [PrimaryPhoneId];";
+9;1;2018-12-19 12:14:46.6973;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM [__EFMigrationsHistory]
+WHERE [MigrationId] = N'20181219091129_LinkOneToOneSchoolStaff-Phone';";
+1;1;2018-12-19 12:14:55.9902;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:14:56.2381;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:14:56.2381;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 12:51:44.5640;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 12:52:21.1142;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:52:21.3021;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:52:21.3021;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:52:21.3131;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:52:21.3381;INFO;;No migrations were applied. The database is already up to date.;
+1;1;2018-12-19 12:52:42.6419;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 12:53:23.4538;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 12:56:25.2566;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:56:25.4517;INFO;;"Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:56:25.4597;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:56:25.4597;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:56:25.4934;INFO;;No migrations were applied. The database is already up to date.;
+1;1;2018-12-19 12:56:44.0815;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 12:56:44.2787;INFO;;"Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 12:56:44.2863;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 12:56:44.2863;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 12:56:44.3013;INFO;;Applying migration '20181219095144_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 12:56:44.3301;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 12:56:44.3301;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 12:56:44.3301;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE NO ACTION;";
+9;1;2018-12-19 12:56:44.3426;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20181219095144_LinkOneToOneSchoolStaff-Phone', N'2.1.4-rtm-31024');";
+1;1;2018-12-19 13:02:33.2724;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:02:33.4663;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:02:33.4737;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 13:02:33.4737;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 13:02:33.5095;INFO;;Reverting migration '20181219095144_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 13:02:33.5186;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId];";
+7;1;2018-12-19 13:02:33.5186;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs];";
+8;1;2018-12-19 13:02:33.5461;INFO;;"Executed DbCommand (23ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[SchoolStaffs]') AND [c].[name] = N'PrimaryPhoneId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [SchoolStaffs] DROP COLUMN [PrimaryPhoneId];";
+9;1;2018-12-19 13:02:33.5461;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM [__EFMigrationsHistory]
+WHERE [MigrationId] = N'20181219095144_LinkOneToOneSchoolStaff-Phone';";
+1;1;2018-12-19 13:02:42.3395;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:02:42.6463;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:02:42.6544;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 13:21:36.0164;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 13:21:52.8651;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:21:53.0708;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:21:53.0794;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 13:21:53.0794;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 13:21:53.0963;INFO;;Applying migration '20181219102136_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 13:21:53.1271;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 13:21:53.1271;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 13:21:53.1271;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE NO ACTION;";
+9;1;2018-12-19 13:21:53.1271;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20181219102136_LinkOneToOneSchoolStaff-Phone', N'2.1.4-rtm-31024');";
+1;1;2018-12-19 13:28:17.8637;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:28:18.1090;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:28:18.1090;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 13:28:18.1090;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 13:28:18.1480;INFO;;Reverting migration '20181219102136_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 13:28:18.1574;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId];";
+7;1;2018-12-19 13:28:18.1574;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs];";
+8;1;2018-12-19 13:28:18.1861;INFO;;"Executed DbCommand (25ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[SchoolStaffs]') AND [c].[name] = N'PrimaryPhoneId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [SchoolStaffs] DROP COLUMN [PrimaryPhoneId];";
+9;1;2018-12-19 13:28:18.1887;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM [__EFMigrationsHistory]
+WHERE [MigrationId] = N'20181219102136_LinkOneToOneSchoolStaff-Phone';";
+1;1;2018-12-19 13:28:23.5903;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:28:23.8426;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:28:23.8426;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 13:47:50.7638;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 13:48:15.3690;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:48:15.6729;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:48:15.6729;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 13:48:35.8690;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 13:49:27.1140;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:49:27.3927;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:49:27.3927;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 13:53:22.7502;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 13:54:46.8760;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:54:47.2265;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:54:47.2355;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 13:55:17.9937;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 13:56:21.1608;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:56:21.4316;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:56:21.4407;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 13:56:44.2327;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 13:58:31.7465;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 13:58:32.0266;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 13:58:32.0364;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 14:03:05.6718;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 14:04:30.6985;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:04:30.8983;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:04:30.8983;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:04:30.9101;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:04:30.9101;INFO;;Applying migration '20181219110305_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:04:30.9458;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 14:04:30.9539;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 14:04:30.9539;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE NO ACTION;";
+9;1;2018-12-19 14:04:30.9539;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20181219110305_LinkOneToOneSchoolStaff-Phone', N'2.1.4-rtm-31024');";
+1;1;2018-12-19 14:15:30.4580;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:15:30.6542;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:15:30.6607;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:15:30.6607;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:15:30.6945;INFO;;Reverting migration '20181219110305_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:15:30.7065;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId];";
+7;1;2018-12-19 14:15:30.7065;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DROP INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs];";
+8;1;2018-12-19 14:15:30.7377;INFO;;"Executed DbCommand (26ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[SchoolStaffs]') AND [c].[name] = N'PrimaryPhoneId');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [SchoolStaffs] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [SchoolStaffs] DROP COLUMN [PrimaryPhoneId];";
+9;1;2018-12-19 14:15:30.7377;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+DELETE FROM [__EFMigrationsHistory]
+WHERE [MigrationId] = N'20181219110305_LinkOneToOneSchoolStaff-Phone';";
+1;1;2018-12-19 14:15:39.6443;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:15:39.8971;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:15:39.9052;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 14:16:16.6089;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 14:16:27.2483;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:16:27.4552;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:16:27.4552;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:16:27.4715;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:16:27.4715;INFO;;Applying migration '20181219111616_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:16:27.5065;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 14:16:27.5065;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 14:16:27.5456;ERROR;;"Failed executing DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE SET NULL;";"System.Data.SqlClient.SqlException (0x80131904): Введение ограничения внешнего ключа (FOREIGN KEY) ""FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId"" для таблицы ""SchoolStaffs"" может привести к появлению циклов или множественных каскадных путей. Укажите ON DELETE NO ACTION или ON UPDATE NO ACTION либо измените другие ограничения внешнего ключа (FOREIGN KEY).
+Не удалось создать ограничение или индекс. См. описание предыдущих ошибок.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:8a7e16d7-bbd9-4db1-81ff-89cfed76d81b
+Error Number:1785,State:0,Class:16"
+1;1;2018-12-19 14:20:10.8244;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:20:11.0098;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:20:11.0166;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:20:11.0166;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:20:11.0324;INFO;;Applying migration '20181219111616_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:20:11.0594;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 14:20:11.0635;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 14:20:11.0635;ERROR;;"Failed executing DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE SET DEFAULT;";"System.Data.SqlClient.SqlException (0x80131904): Введение ограничения внешнего ключа (FOREIGN KEY) ""FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId"" для таблицы ""SchoolStaffs"" может привести к появлению циклов или множественных каскадных путей. Укажите ON DELETE NO ACTION или ON UPDATE NO ACTION либо измените другие ограничения внешнего ключа (FOREIGN KEY).
+Не удалось создать ограничение или индекс. См. описание предыдущих ошибок.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:921dfa45-ec79-4e00-823b-549d2766b7e1
+Error Number:1785,State:0,Class:16"
+1;1;2018-12-19 14:24:11.6006;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:24:11.8441;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:24:11.8441;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:24:11.8441;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:24:11.8653;INFO;;Applying migration '20181219111616_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:24:11.8944;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 14:24:11.9082;ERROR;;"Failed executing DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NULL;";"System.Data.SqlClient.SqlException (0x80131904): Выполнение инструкции CREATE UNIQUE INDEX прервано, поскольку обнаружен повторяющийся ключ для объекта с именем ""dbo.SchoolStaffs"" и индекса с именем ""IX_SchoolStaffs_PrimaryPhoneId"". Повторяющееся значение ключа: (<NULL>).
+Выполнение данной инструкции было прервано.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:3dc92bc4-f414-4fd7-8891-696992c8ecd6
+Error Number:1505,State:1,Class:16"
+1;1;2018-12-19 14:25:16.9609;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:25:17.1589;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:25:17.1589;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:25:17.1715;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:25:17.1715;INFO;;Applying migration '20181219111616_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:25:17.2130;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 14:25:17.2333;ERROR;;"Failed executing DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId];";"System.Data.SqlClient.SqlException (0x80131904): Неправильный синтаксис около конструкции "";"".
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:e9e5bf7c-c8eb-4e01-9d0c-bf9a5d072af8
+Error Number:102,State:1,Class:15"
+1;1;2018-12-19 14:31:35.2538;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:31:35.4552;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:31:35.4552;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:31:35.4705;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:31:35.4705;INFO;;Applying migration '20181219111616_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:31:35.5138;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 14:31:35.5181;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 14:31:35.5181;ERROR;;"Failed executing DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE SET NULL;";"System.Data.SqlClient.SqlException (0x80131904): Введение ограничения внешнего ключа (FOREIGN KEY) ""FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId"" для таблицы ""SchoolStaffs"" может привести к появлению циклов или множественных каскадных путей. Укажите ON DELETE NO ACTION или ON UPDATE NO ACTION либо измените другие ограничения внешнего ключа (FOREIGN KEY).
+Не удалось создать ограничение или индекс. См. описание предыдущих ошибок.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:34406822-9b81-4632-9264-c75f56101e09
+Error Number:1785,State:0,Class:16"
+1;1;2018-12-19 14:32:12.9085;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:32:13.0930;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:32:13.0930;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 14:32:13.0930;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 14:32:13.1130;INFO;;Applying migration '20181219111616_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 14:32:13.1415;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 14:32:13.1415;INFO;;"Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]);";
+8;1;2018-12-19 14:32:13.1415;ERROR;;"Failed executing DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE SET NULL;";"System.Data.SqlClient.SqlException (0x80131904): Введение ограничения внешнего ключа (FOREIGN KEY) ""FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId"" для таблицы ""SchoolStaffs"" может привести к появлению циклов или множественных каскадных путей. Укажите ON DELETE NO ACTION или ON UPDATE NO ACTION либо измените другие ограничения внешнего ключа (FOREIGN KEY).
+Не удалось создать ограничение или индекс. См. описание предыдущих ошибок.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite, String methodName)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at Microsoft.EntityFrameworkCore.Storage.Internal.RelationalCommand.Execute(IRelationalConnection connection, DbCommandMethod executeMethod, IReadOnlyDictionary`2 parameterValues)
+ClientConnectionId:9124e13a-0c97-4872-b4cd-0213159ea445
+Error Number:1785,State:0,Class:16"
+1;1;2018-12-19 14:44:50.4772;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 14:44:50.7564;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 14:44:50.7654;INFO;;"Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+1;1;2018-12-19 15:22:32.3567;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+1;1;2018-12-19 15:23:00.2928;INFO;;Entity Framework Core 2.1.4-rtm-31024 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None;
+2;1;2018-12-19 15:23:00.4975;INFO;;"Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+3;1;2018-12-19 15:23:00.5053;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');";
+4;1;2018-12-19 15:23:00.5053;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];";
+5;1;2018-12-19 15:23:00.5200;INFO;;Applying migration '20181219122232_LinkOneToOneSchoolStaff-Phone'.;
+6;1;2018-12-19 15:23:00.5500;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD [PrimaryPhoneId] int NULL;";
+7;1;2018-12-19 15:23:00.5500;INFO;;"Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_SchoolStaffs_PrimaryPhoneId] ON [SchoolStaffs] ([PrimaryPhoneId]) WHERE [PrimaryPhoneId] IS NOT NULL;";
+8;1;2018-12-19 15:23:00.5500;INFO;;"Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+ALTER TABLE [SchoolStaffs] ADD CONSTRAINT [FK_SchoolStaffs_SchoolStaffPhones_PrimaryPhoneId] FOREIGN KEY ([PrimaryPhoneId]) REFERENCES [SchoolStaffPhones] ([Id]) ON DELETE NO ACTION;";
+9;1;2018-12-19 15:23:00.5500;INFO;;"Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20181219122232_LinkOneToOneSchoolStaff-Phone', N'2.1.4-rtm-31024');";
+1;1;2018-12-19 15:45:48.9339;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 15:48:01.9090;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 15:49:43.6590;DEBUG;(Program.cs:22);init main;
+2;35;2018-12-19 15:57:36.0984;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: wryt;
+3;55;2018-12-19 15:57:36.5254;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: deqw;
+4;62;2018-12-19 15:57:37.5360;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: сиафврп;
+5;64;2018-12-19 15:57:38.0405;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: цшт32;
+6;60;2018-12-19 15:57:38.5957;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: example;
+7;67;2018-12-19 15:57:39.1768;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: example;
+8;56;2018-12-19 15:57:39.7638;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: sadvgdfasg;
+9;61;2018-12-19 15:57:40.2773;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: dafshasfhgsd;
+10;55;2018-12-19 15:57:40.8154;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: dok;
+11;69;2018-12-19 15:57:41.3976;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: Spam;
+12;69;2018-12-19 15:57:42.3743;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Anna Ivanovna Ivanovna, address: +375-29-2343785, Text: 3425;
+13;35;2018-12-19 15:57:42.5159;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: GoGo;
+14;35;2018-12-19 15:57:42.7784;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Sergey Ivanovich Ivanovich, address: +375-29-1708055, Text: sdftujyt;
+15;62;2018-12-19 15:57:42.9533;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: win;
+16;72;2018-12-19 15:57:43.1482;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Sergey Ivanovich Ivanovich, address: +375-29-1708055, Text: Hello;
+17;61;2018-12-19 15:57:43.9877;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: brrrrr;
+18;60;2018-12-19 15:57:44.4797;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: An;
+19;67;2018-12-19 15:57:45.0086;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: Leonid;
+20;56;2018-12-19 15:57:45.4878;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Sergey Ivanovich Ivanovich, address: alechno@tut.by, Text: Serg;
+21;64;2018-12-19 15:57:46.1914;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Anna Ivanovna Ivanovna, address: +375-29-2343785, Text: qwerty;
+22;55;2018-12-19 15:57:46.5486;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: Ann;
+23;73;2018-12-19 15:57:46.7960;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Sergey Ivanovich Ivanovich, address: +375-29-1708055, Text: eutyu65u;
+24;62;2018-12-19 15:57:46.9921;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: !!!!!!!!!!;
+25;67;2018-12-19 15:57:47.7882;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Sergey Ivanovich Ivanovich, address: +375-29-1708055, Text: sdgsd;
+26;35;2018-12-19 15:57:48.2706;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Sergey Ivanovich Ivanovich, address: +375-29-1708055, Text: TyTy;
+27;73;2018-12-19 15:57:49.7243;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: win32;
+28;61;2018-12-19 15:57:51.0005;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Anna Ivanovna Ivanovna, address: +375-29-2343785, Text: qwerty;
+29;35;2018-12-19 15:57:51.1260;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: Ivan;
+30;72;2018-12-19 15:57:51.8327;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: Sergey;
+1;1;2018-12-19 16:49:23.5790;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 17:14:29.9424;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 17:33:45.4746;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 17:43:01.3592;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 17:49:09.9737;DEBUG;(Program.cs:22);init main;
+1;1;2018-12-19 17:51:17.5992;DEBUG;(Program.cs:22);init main;
+2;15;2018-12-19 17:51:27.6720;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Anna Ivanovna Ivanovna, address: +375-29-2343785, Text: qwerty;
+1;1;2018-12-19 17:52:05.7991;DEBUG;(Program.cs:22);init main;
+2;7;2018-12-19 17:52:24.3834;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Anna Ivanovna Ivanovna, address: +375-29-2343785, Text: qwerty;
+1;1;2018-12-19 18:01:47.0967;DEBUG;(Program.cs:22);init main;
+2;7;2018-12-19 18:01:59.4639;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Anna Ivanovna Ivanovna, address: +375-29-2343785, Text: qwerty;
+3;42;2018-12-19 18:04:25.2487;INFO;(ConcreteMessageEmail.cs:51);Sending email to employee Anna Ivanovna Ivanovna, address: 1234567@tut.by, Text: Sergey;
+1;1;2018-12-19 18:30:16.7636;DEBUG;(Program.cs:22);init main;
+2;13;2018-12-19 18:30:38.2768;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Anna Ivanovna Ivanovna, address: +375-29-2343785, Text: qwerty;
+1;1;2018-12-19 22:28:20.3441;DEBUG;(Program.cs:22);init main;
+2;8;2018-12-19 22:28:34.9176;INFO;(ConcreteMessageSMS.cs:18);Sending SMS to employee Sergey Ivanovich Ivanovich, address: +375-29-1708055, Text: eutyu65u;

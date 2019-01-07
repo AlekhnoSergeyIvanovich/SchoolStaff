@@ -108,14 +108,14 @@ namespace Presentation.Controllers
         // POST: SchoolStaff/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create(SchoolStaff staff)
+        public ActionResult Create(SchoolStaff staff)
         {
             try
             {
                 // TODO: Add insert logic here
                 if (ModelState.IsValid)
                 {
-                    await _repos.Create(staff);
+                    _repos.Create(staff);
                     return RedirectToAction(nameof(Index));
                 }
                 else

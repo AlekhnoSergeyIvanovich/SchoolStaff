@@ -41,9 +41,9 @@ namespace Presentation.SignalR
             return _context.Get(id); //_dbSet.FindAsync(id);
         }
 
-        public async Task Create(T index)
+        public async void Create(T index)
         {
-            await _context.Create(index); //_dbSet.AddAsync(index);
+            _context.Create(index); //_dbSet.AddAsync(index);
             await _dbcontext.SaveChangesAsync();
             await NotifyEmployeeListModified(MethodAdd, index);
         }
